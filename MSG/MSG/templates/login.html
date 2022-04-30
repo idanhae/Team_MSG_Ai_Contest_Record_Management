@@ -1,0 +1,59 @@
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <script>
+            alert('{{messages[-1]}}')
+        </script>
+    {% endif %}
+{% endwith %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Make Site Good</title>
+    <link href="{{ url_for('static', filename='assets/dist/css/contact_us.css') }}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        h1{
+	font-weight: bold;
+	font-size: 4em;
+	font-family: 'Raleway', sans-serif;
+	margin: 0 auto;
+	margin-top: 10px;
+	width: 500px;
+	color: #F90;
+	text-align: center;
+}
+    </style>
+</head>
+<body>
+<header><br></header>
+    <h1>Log in</h1>
+    <div id="form">
+
+        <div class="fish" id="fish"></div>
+        <div class="fish" id="fish2"></div>
+
+        <form action="{{url_for('main.log_in',id=id)}}" id="login-form" method="post">
+
+        <div class="formgroup" id="name-form">
+            <label for="user_id">User id*</label>
+            <input type="text" id="user_id" name="user_id">
+        </div>
+
+        <div class="formgroup" id="email-form">
+            <label for="password">Password*</label>
+            <input type="password" id="password" name="password">
+        </div>
+            <input type="submit" value="Enter!">
+            <div id="register-link" class="text-right">
+                                <a href="{{url_for('main.sign_up')}}" class="text-info" style="color:#FFFFFF">Register here</a>
+                            </div>
+        </form>
+    </div>
+</body>
+</html>

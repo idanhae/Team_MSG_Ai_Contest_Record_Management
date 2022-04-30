@@ -1,0 +1,72 @@
+#test_btn{
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        margin-left:75%;
+        margin-top:5px;
+        margin-bottom:5px;
+         }
+
+#test_btn1{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-left:65%;
+    margin-top:5px;
+    margin-bottom:5px;
+          }
+
+#test_btn2{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-left:5px;
+    margin-bottom:5px;
+    margin-top:5px;
+          }
+
+#test_btn3{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-top:5px;
+    margin-bottom:5px;
+    margin-left:5px;
+          }
+
+#test_btn4{
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        margin-left:5px;
+        margin-top:5px;
+        margin-bottom:5px;
+         }
+
+#btn_group button{
+    border: 1px solid white;
+    background-color: rgba(0,0,0,0);
+    color: white;
+    padding: 5px;
+    font-family: 'Relaway'
+                }
+
+
+#btn_group button:hover{
+    color:white;
+    background-color: black;
+    font-family: 'Relaway'
+    -webkit-transition: background-color 0.5s;
+	-moz-transition: background-color 0.5s;
+	-o-transition: background-color 0.5s;
+	transition: background-color 0.5s;
+                       }
+
+tr{
+    font-family: '배달의민족 도현';
+    font-size: 17px;}

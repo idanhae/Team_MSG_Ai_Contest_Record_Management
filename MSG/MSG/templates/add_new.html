@@ -1,0 +1,91 @@
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <script>
+            alert('{{messages[-1]}}')
+        </script>
+    {% endif %}
+{% endwith %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Make Site Good</title>
+    <link href="{{ url_for('static', filename='assets/dist/css/contact_us.css') }}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        h1{
+	font-weight: bold;
+	font-size: 4em;
+	font-family: 'Raleway', sans-serif;
+	margin: 0 auto;
+	margin-top: 10px;
+	width: 500px;
+	color: #F90;
+	text-align: center;
+}
+    </style>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+                 <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('main.index') }}" style="color:#17a2b8; font-size:15px; font-style: unset;">MSG </a>
+            </li>
+       <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:#17a2b8; font-size:20px;">
+                My Page
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="{{ url_for('main.mypage', id=id) }}" style="color:#17a2b8; font-size:20px;">My Page</a>
+                <li><a class="dropdown-item" href="{{ url_for('main.add_info', id=id) }}" style="color:#17a2b8; font-size:20px;">Add New</a>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:#17a2b8; font-size:20px;">
+                Contest
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="{{ url_for('main.recommend_me', id=id) }}" style="color:#17a2b8; font-size:20px;">Recommend</a>
+                <li><a class="dropdown-item" href="{{ url_for('main.show_all', id=id) }}" style="color:#17a2b8; font-size:20px;">Show All</a>
+                  <li><a class="dropdown-item" href="{{ url_for('main.show_all_past', id=id) }}" style="color:#17a2b8; font-size:20px;">Show Past</a>
+              </ul>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('main.contact', id=id) }}" style="color:#17a2b8; font-size:20px;">Contact us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+</header>
+    <h1>Make Your Record</h1>
+    <div id="form">
+
+        <div class="fish" id="fish"></div>
+        <div class="fish" id="fish2"></div>
+<div style="text-align:center; font-size:22px;">
+        <form action="{{url_for('main.append', id=id)}}" id="waterform" method="post">
+        <label for="contest_name">Let us know what you did!</label>
+        <select name="contest_name" id="contest_name">
+              {% for record in data %}
+            <option value={{record}}>{{record}}</option>
+               {% endfor %}
+          </select>
+
+            <input type="submit" value="Add!">
+        </form>
+</div>
+    </div>
+</body>
+</html>
